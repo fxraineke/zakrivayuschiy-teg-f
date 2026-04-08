@@ -1,1 +1,12 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main: "Inter Variable", sans-serif;
+  --font-accent: "Press Start 2P", system-ui;
+  --font-weight-main: 410;
+  --font-weight-title: 715;
+  --bacground-gradient: repeating-linear-gradient(to right, #d3d3d3 2px, transparent 2px), repeating-linear-gradient(to bottom, #d3d3d3 2px, transparent 2px), repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --button-text-color: #fff;
+  --color-accent: #000;
+  --heart-contur-color: #000;
+  --heart-body-color: red;
+  --heart-sparks-color: red;
+}
