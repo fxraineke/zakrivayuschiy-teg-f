@@ -282,6 +282,7 @@
   grid-template-columns: max-content 1fr;
   max-inline-size: clamp(306px, calc(295.788732px + 2.723005vw), 335px);
   min-block-size: 55px;
+  gap: 8px;
 }
 
 .save-dialog {
@@ -320,8 +321,8 @@
 
   .main__save-button > svg {
     justify-self: center;
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
     margin-left: 8px;
   }
 }
