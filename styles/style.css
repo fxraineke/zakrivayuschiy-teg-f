@@ -12,9 +12,9 @@
 
 .page {
   font-family: var(--font-main);
-  background-image: url("../images/background.png"), var(--bacground-gradient);
-  background-size: 4px, cover;
+  background: var(--bacground);
   background-attachment: fixed;
+  background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--font-weight-main);
@@ -25,6 +25,7 @@
   margin: 0 auto;
   margin-top: 100px;
   background-color: #fff;
+  border: #000 2px solid;
   max-inline-size: clamp(375px, calc(260.56338px + 30.516432vw), 700px);
   min-block-size: clamp(327px, calc(312.56338px + 3.849765vw), 368px);
 }
@@ -39,7 +40,6 @@
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   text-align: center;
   text-transform: uppercase;
-  min-inline-size: clamp(343px, 100vw, 455px);
   min-block-size: clamp(83px, 100vh, 108px);
 }
 
@@ -99,31 +99,31 @@
   }
 }
 
-.card:nth-child(2) img {
+.grayscale-filter {
   filter: grayscale(50%);
 }
 
-.card:nth-child(3) img {
+.saturate-filter {
   filter: saturate(350%);
 }
 
-.card:nth-child(4) img {
+.hue-rotate-filter {
   filter: hue-rotate(40deg);
 }
 
-.card:nth-child(5) img {
+.invert-filter {
   filter: invert(80%);
 }
 
-.card:nth-child(6) img {
+.sepia-filter {
   filter: sepia(80%);
 }
 
-.card:nth-child(7) img {
+.blur-filter {
   filter: blur(15px);
 }
 
-.card:nth-child(8) img {
+.hue-rotate-opacity-filter {
   filter: hue-rotate(90deg) opacity(50%);
 }
 
@@ -186,6 +186,7 @@
   background-color: #fff;
   transition: border-color 0.3s ease;
   max-block-size: 38px;
+  cursor: pointer;
 }
 
 .card__icon-button:focus {
@@ -280,22 +281,22 @@
 
 .main__save-button {
   grid-template-columns: max-content 1fr;
+  gap: 8px;
   max-inline-size: clamp(306px, calc(295.788732px + 2.723005vw), 335px);
   min-block-size: 55px;
-  gap: 8px;
 }
 
 .save-dialog {
   display: none;
-  padding: 30px;
-  max-inline-size: clamp(341px, 100%, 353px);
+  padding: 25px 30px;
+  max-inline-size: clamp(341px, calc(336.774648px + 1.126761vw), 353px);
 }
 
 .save-dialog[open] {
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: max-content 1fr;
-  gap: 12px;
+  gap: 20px;
   font-family: var(--font-accent);
 }
 
@@ -303,10 +304,21 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.save-dialog > svg {
+  margin: auto 0;
+}
+
 .save-dialog__buttons {
   grid-column: span 2;
   grid-row: 2;
   margin-top: calc(30px - 12px);
+}
+
+.save-dialog__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
 }
 
 @media (width < 376px) {
@@ -324,5 +336,13 @@
     width: 28px;
     height: 28px;
     margin-left: 8px;
+  }
+
+  .save-dialog {
+    padding: 25px 38px;
+  }
+
+  .save-dialog__buttons {
+    margin-top: calc(30px - 20px);
   }
 }
